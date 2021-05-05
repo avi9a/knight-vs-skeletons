@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform attackPoint;
     private Rigidbody2D playerRb;
     public LayerMask enemyLayers;
+    public GameManager gameManager;
+    public CanvasGroup endCanvas;
     public float attackRange = 0.2f;
     private float speed = 45f;
     private float horizontalInput = 0f;
@@ -64,10 +66,15 @@ public class PlayerMovement : MonoBehaviour
         animator.SetTrigger("Hurt");
         if(health <= 0) {
             Die();
+            StartCoroutine(Capture());
         }
     }
     void Die() {
         animator.SetBool("IsDead", true);
+    }
+    private IEnumerator Capture() {
+        yield return new WaitForSeconds(2);
+        gameManager.EndLevel(endCanvas, true);
     }
     private void OnDrawGizmosSelected() {
         if (attackPoint == null)
