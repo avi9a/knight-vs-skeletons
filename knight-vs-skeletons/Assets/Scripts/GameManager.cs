@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-   public float timer;
+    public bool gameOver = false;
     public void EndLevel() {
-        Debug.Log("game over");
-        /*timer += Time.deltaTime / 2;
-        canvas.alpha = timer / 1;
-        if (timer > 1) {
-            if (restart) {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
-            else {
-                Application.Quit();
-            }
-        }*/
+        if (gameOver == false) {
+            gameOver = true;
+            Debug.Log("game over");
+        }
     }
 }
