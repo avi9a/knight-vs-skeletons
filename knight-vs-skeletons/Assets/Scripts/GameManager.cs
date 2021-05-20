@@ -6,15 +6,25 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public bool gameOver = false;
+    public bool click = false;
+    public GameObject endCanvas;
+    public GameObject restartButton;
     public void EndLevel() {
         if (gameOver == false) {
             gameOver = true;
             Debug.Log("game over");
+            endCanvas.SetActive(true);
             Restart();
         }
     }
     public void Restart() {
-        //press the space bar and load the active scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (click == true) {
+            OnClick();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+    public void OnClick() {
+        click = true;
+        Debug.Log("click");
     }
 }
