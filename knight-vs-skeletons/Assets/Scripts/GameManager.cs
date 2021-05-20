@@ -15,5 +15,6 @@ public class GameManager : MonoBehaviour
     }
     public void Restart() {
         //press the space bar and load the active scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
