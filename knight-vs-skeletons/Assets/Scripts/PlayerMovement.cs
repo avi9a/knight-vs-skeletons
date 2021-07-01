@@ -17,8 +17,11 @@ public class PlayerMovement : MonoBehaviour
     public int attackDamage = 10;
     public int maxHealth = 500;
     private int health;
+    private GameObject joystickCanvas;
     private void Start() {
         playerRb = GetComponent<Rigidbody2D>();
+        joystickCanvas = GameObject.Find("Joystick");
+        joystickCanvas.SetActive(true);
         health = maxHealth;
     }
     void Update()
@@ -65,6 +68,8 @@ public class PlayerMovement : MonoBehaviour
         if(health <= 0) {
             Die();
             FindObjectOfType<GameManager>().EndLevel();
+            FindObjectOfType<GameManager>().Restart();
+            joystickCanvas.SetActive(false);
         }
     }
     void Die() {
