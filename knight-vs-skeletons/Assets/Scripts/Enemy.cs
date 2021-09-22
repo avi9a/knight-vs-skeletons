@@ -45,11 +45,12 @@ public class Enemy : MonoBehaviour {
     public void OnCollisionStay2D(Collision2D collision) {
         if(collision.gameObject.tag == "Player") {
             Debug.Log("Enemy tought the player");
+            animator.SetTrigger("Attack_e");
             AttackPlayer();
         }
     }
     public void AttackPlayer() {
-        animator.SetTrigger("Attack_e");
+        //animator.SetTrigger("Attack_e");
         Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
         foreach (Collider2D player in hitPlayer) {
             player.GetComponent<PlayerMovement>().TakeDamageFromEnemies(attackDamage);
