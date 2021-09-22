@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour {
     void Die() {
         Debug.Log("Enemy died");
         animator.SetBool("IsDead", true);
-        coroutine = DiedAndDisappeared(5);
+        coroutine = DiedAndDisappeared(2);
         StartCoroutine(coroutine);
     }
     IEnumerator DiedAndDisappeared(float waitTime) {
