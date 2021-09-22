@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour {
         yield return new WaitForSeconds(waitTime);
         Destroy(this.gameObject);
     }
-    public void OnCollisionStay2D(Collision2D collision) {
+    public void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.tag == "Player") {
             Debug.Log("Enemy tought the player");
             animator.SetTrigger("Attack_e");
