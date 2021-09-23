@@ -27,7 +27,4 @@ public class GameManager : MonoBehaviour
         click = true;
         Debug.Log("click");
     }
-    public void Health() {
-
-    }
 }
