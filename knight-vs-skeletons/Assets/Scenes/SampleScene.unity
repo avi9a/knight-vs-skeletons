@@ -5077,6 +5077,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5786758957673708824, guid: d7507e8a43a76ed4fb8a18c51a719a68, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 963373031}
     - target: {fileID: 5786758957673708830, guid: d7507e8a43a76ed4fb8a18c51a719a68, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -5186,6 +5190,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 6445669536857969749, guid: dc0a7f75e79965d4394cb3f2aadf1338, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 963373031}
     - target: {fileID: 6445669536857969759, guid: dc0a7f75e79965d4394cb3f2aadf1338, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
@@ -5227,6 +5235,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 6450658972188083141, guid: d3b15402a6ab60b43aae1bbeb57fda84, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 963373031}
     - target: {fileID: 6450658972188083144, guid: d3b15402a6ab60b43aae1bbeb57fda84, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.73
@@ -5376,6 +5388,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 6822079380351817261, guid: 0dcc37987593b57478e8c92a0b503ae2, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 963373031}
     - target: {fileID: 6822079380351817263, guid: 0dcc37987593b57478e8c92a0b503ae2, type: 3}
       propertyPath: m_Mass
       value: 5
@@ -5417,6 +5433,10 @@ PrefabInstance:
       propertyPath: attackRange
       value: 1.05
       objectReference: {fileID: 0}
+    - target: {fileID: 8203882828613036937, guid: 8141742c9a1144940923a9204d132a04, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 963373031}
     - target: {fileID: 8203882828613036939, guid: 8141742c9a1144940923a9204d132a04, type: 3}
       propertyPath: m_Mass
       value: 6.5
