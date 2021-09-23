@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour {
     public Transform attackPoint;
     public LayerMask playerLayer;
     private IEnumerator coroutine;
+    public GameManager gameManager;
     void Start() {
         enemyRb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
@@ -50,10 +51,11 @@ public class Enemy : MonoBehaviour {
         }
     }
     public void AttackPlayer() {
-        //animator.SetTrigger("Attack_e");
-        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
-        foreach (Collider2D player in hitPlayer) {
-            player.GetComponent<PlayerMovement>().TakeDamageFromEnemies(attackDamage);
+        if (gameManager.gameOver == false) {
+            Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+            foreach (Collider2D player in hitPlayer) {
+                player.GetComponent<PlayerMovement>().TakeDamageFromEnemies(attackDamage);
+            }
         }
     }
     private void OnDrawGizmosSelected() {
