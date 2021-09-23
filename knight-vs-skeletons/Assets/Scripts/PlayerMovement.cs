@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,12 +12,13 @@ public class PlayerMovement : MonoBehaviour
     public Transform attackPoint;
     private Rigidbody2D playerRb;
     public LayerMask enemyLayers;
+    public TextMeshProUGUI healthText;
     public float attackRange = 0.2f;
     private float speed = 45f;
     private float horizontalInput = 0f;
     private bool jump = false;
     public int attackDamage = 10;
-    public int maxHealth = 500;
+    public int maxHealth = 50;
     private int health;
     private GameObject joystickCanvas;
     private void Start() {
@@ -23,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         joystickCanvas = GameObject.Find("Joystick");
         joystickCanvas.SetActive(true);
         health = maxHealth;
+        TakeDamageFromEnemies(0);
     }
     void Update()
     {
@@ -64,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void TakeDamageFromEnemies(int playerDamage) {
         health -= playerDamage;
+        healthText.text = "Health: " + health;
         animator.SetTrigger("Hurt");
         if(health <= 0) {
             Die();
