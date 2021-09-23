@@ -20,11 +20,11 @@ public class GameManager : MonoBehaviour
     public void Restart() {
         if (click == true) {
             OnClick();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
     public void OnClick() {
         click = true;
         Debug.Log("click");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
