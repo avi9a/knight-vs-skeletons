@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public bool gameOver;
-    public bool click = false;
+    public bool click;
     public GameObject endCanvas;
     public GameObject restartButton;
     public void EndLevel() {
@@ -26,5 +26,8 @@ public class GameManager : MonoBehaviour
     public void OnClick() {
         click = true;
         Debug.Log("click");
+    }
+    public void Health() {
+
     }
 }
