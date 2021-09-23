@@ -60,12 +60,12 @@ public class PlayerMovement : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if (touch.position.x > Screen.width / 2) {
                 animator.SetTrigger("Attack1");
-                if (enemies.currentHealth > 0) { //протестить!!!
+               // if (enemies.currentHealth > 0) { //протестить!!!
                     Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
                     foreach (Collider2D enemy in hitEnemies) {
                         enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
                     }
-                }
+                //}
             }
         } 
     }
