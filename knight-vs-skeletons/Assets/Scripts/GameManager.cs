@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject endCanvas;
     public GameObject restartButton;
     public void EndLevel() {
-        if (gameOver == false) {
+        if (gameOver) {
             gameOver = true;
             Debug.Log("game over");
             endCanvas.SetActive(true);
