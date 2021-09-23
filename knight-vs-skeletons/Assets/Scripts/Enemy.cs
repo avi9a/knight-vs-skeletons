@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour {
     private float speed = 10;
     public float attackRange = 0.2f;
     public int maxHealth = 100;
-    private int currentHealth;
+    public int currentHealth;
     public int attackDamage = 10;
     private Rigidbody2D enemyRb;
     public Animator animator;
